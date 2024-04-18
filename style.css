@@ -23,7 +23,7 @@ input[type="range"] {
     border-radius: 30px;
     background: #273549; /* lo no marcado en la linea */
     background-image: linear-gradient(to left, #7DD3FC, #7ffc7d); /* lo que se marcara en la linea si quieres que sea del mismi color pon los dos colores iguales*/
-    background-size: 50% 100%;
+    background-size: 50% 100%; /* importante que ajustes el 50% para donde quieres que aparezca inicialmente la barra sin colorear, en mi caso quiero que aparezca en la mitad porque el value de mi input está en la mitad */
     background-repeat: no-repeat;
     height: var(--altura-linea);
   }
