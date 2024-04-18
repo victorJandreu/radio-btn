@@ -1,0 +1,106 @@
+
+
+/* color input en el centro de la pagina */
+body{
+    min-height: 100vh;
+    display: grid;
+    place-content: center;
+}
+
+
+/* variables para poner la altura de la barra o del boton */
+
+:root{
+    --altura-linea:  1rem;
+    --altura-boton: 2.4rem;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    width: 30rem; /* la anchura del input */
+    border-radius: 30px;
+    background: #273549; /* lo no marcado en la linea */
+    background-image: linear-gradient(to left, #7DD3FC, #7ffc7d); /* lo que se marcara en la linea si quieres que sea del mismi color pon los dos colores iguales*/
+    background-size: 50% 100%;
+    background-repeat: no-repeat;
+    height: var(--altura-linea);
+  }
+
+/* la linea */
+  /* para la mayoria de los navegadores establecer la altura de la linea */
+  input[type="range"]::-webkit-slider-runnable-track {
+    background: transparent;
+    height: var(--altura-linea);
+  }
+
+  /******** Firefox ********/
+  input[type="range"]::-moz-range-track {
+    background: transparent;
+    height: var(--altura-linea);
+  }
+
+  
+
+/* el boton con el movemos la linea */
+
+  /* para la mayoría de los navegadores */
+  input[type="range"]::-webkit-slider-thumb {
+    box-sizing: border-box;
+    position: relative;
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    border: none; /* si quieres puedes ponerle borde */
+    margin-top: calc((var(--altura-linea) / 2) - (var(--altura-boton) / 2)); /* la formula para central el boton dentro de la barra o linea */
+    background: #5cd5eb; /* si quieres poner un color normal en mi caso esta no tiene ningun efecto porque meto un linear gradiente después de la imagen */
+    height: var(--altura-boton);
+    width: var(--altura-boton);   /* porque quiero un circulo pero podrias poner cualquier cosa o un clip el estado por defecto es un cuadrado */ 
+    border-radius: 100%;
+    background-image: url("./icon-slider.svg"), linear-gradient(to right, #7DD3FC 50%, #273549); /* para poner la imagen de los dos triangulos dentro del */
+    background-repeat: no-repeat;
+    background-position: center;
+    
+ }
+
+     /***** Firefox *****/
+    input[type="range"]::-moz-range-thumb {
+        box-sizing: border-box;
+        position: relative;
+        -webkit-appearance: none; /* Override default look */
+        appearance: none;
+        border: none; /* si quieres puedes ponerle borde */
+        margin-top: calc((var(--altura-linea) / 2) - (var(--altura-boton) / 2)); /* la formula para central el boton dentro de la barra o linea */
+        background: #5cd5eb; /* si quieres poner un color normal en mi caso esta no tiene ningun efecto porque meto un linear gradiente después de la imagen */
+        height: var(--altura-boton);
+        width: var(--altura-boton);   /* porque quiero un circulo pero podrias poner cualquier cosa o un clip el estado por defecto es un cuadrado */ 
+        border-radius: 100%;
+        background-image: url("./icon-slider.svg"), linear-gradient(to right, #7DD3FC 50%, #273549); /* para poner la imagen de los dos triangulos dentro del */
+        background-repeat: no-repeat;
+        background-position: center;
+        
+    }
+
+ /***** Focus Styles para que se centre en el boton *****/
+    /* Removes default focus */
+    input[type="range"]:focus {
+        outline: none;
+    }
+  
+  /***** Chrome, Safari, Opera, and Edge Chromium *****/
+  input[type="range"]:focus::-webkit-slider-thumb {
+    /* para cambiar el tamaño y el color de cuando tocas el boton las lineas que aparecen */
+    border: 1px solid #7ffc7dbc;
+    outline: 3px solid #7ffc7dbc;
+    outline-offset: 0.125rem;
+  }
+  
+  /******** Firefox ********/
+  input[type="range"]:focus::-moz-range-thumb {
+    border: 1px solid #7ffc7dbc;
+    outline: 3px solid #7ffc7dbc;
+    outline-offset: 0.125rem;     
+    
+  }
+
+
